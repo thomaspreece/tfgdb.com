@@ -1,7 +1,7 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT']."/Includes/UsersInclude.php");
 
-$DOMAIN = "http://tfgdb.com";
+$DOMAIN = "https://tfgdb.com";
 $DOMAINTITLE = "TFGdb.com: a large database of downloadable and online free to play games";
 
 if($user->data['is_registered']){
@@ -13,7 +13,7 @@ if($user->data['is_registered']){
 				header( "Location: ".$DOMAIN."/index.php" );
 				die('');
 				break;
-		}	
+		}
 	}
 }else{
 	switch ($PageName) {
@@ -26,7 +26,7 @@ if($user->data['is_registered']){
 		default:
 			break;
 	}
-}		
+}
 
 
 //Load Functions
