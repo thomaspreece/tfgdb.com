@@ -1,0 +1,123 @@
+RewriteEngine on
+Options +FollowSymlinks
+ExpiresActive on
+
+php_value date.timezone "Europe/London"
+
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/.+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^(.*)\.[\d]{10}\.(css|js)$ $1.$2 [L]
+
+ExpiresByType image/gif A29030400
+ExpiresByType image/jpeg A29030400
+ExpiresByType image/png A29030400
+BrowserMatch "MSIE" brokenvary=1
+BrowserMatch "Mozilla/4.[0-9]{2}" brokenvary=1
+BrowserMatch "Opera" !brokenvary
+SetEnvIf brokenvary 1 force-no-vary
+
+#RewriteCond %{REMOTE_ADDR} !^93\.97\.124\.23$
+#RewriteCond %{REQUEST_URI} !^/maintenance\.php$
+#RewriteCond %{REQUEST_URI} !^/index\.php$
+#RewriteCond %{REQUEST_URI} !^/Ciaran\.php$
+#RewriteRule ^(.*)$ /maintenance.php [L]
+
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/.+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^API/$ API.php [L]
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/.+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^API/index.php$ API.php [L]
+
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/.+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^Games/([0-9]+)(/(.*))?$ GetGame.php?ID=$1&%{QUERY_STRING} [L,S=2]
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/.+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^([0-9]+)(/(.*))?$ GetGame.php?ID=$1&%{QUERY_STRING} [L,S=1]
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/.+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^Games/(.*)$ / [L,R=301]
+
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/.+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^Edit/([0-9]+)(/(.*))?$ EditGame.php?ID=$1&%{QUERY_STRING} [L,S=1]
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/.+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^Edit/(.*)$ $1 [L,R=301]
+
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/.+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^AddGame(/(.*))?$ AddGame.php?%{QUERY_STRING} [L]
+
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/.+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^Terms\.php$ /Forum/ucp.php?mode=terms [L,R=301,NC]
+
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/.+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^(.*)\.[0-9]{10}\.(css|js)$ $1.$2
+
+IndexIgnore .htaccess */.??* *~ *# */HEADER* */README* */_vti*
+
+<Limit GET POST>
+order deny,allow
+deny from all
+allow from all
+</Limit>
+<Limit PUT DELETE>
+order deny,allow
+deny from all
+</Limit>
+
+DirectoryIndex index.php index.html index.htm index.shtml
+
+RewriteCond %{http_host} ^www\.tfgdb\.com [NC]
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/.+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^(.*)$ http://tfgdb.com/$1 [R=301,NC]
+
+RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/.+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^Sitemap.xml$  http://tfgdb.com/Sitemap.php [L]
+
+ErrorDocument 400 /400.php
+ErrorDocument 403 /403.php
+ErrorDocument 404 /404.php
+
+# enable PHP error logging
+php_flag  log_errors on
+php_value error_log  /home/gamesdbc/public_html/tfgdb.com/PHP_errors.log
+
+# prevent access to PHP error log
+<Files PHP_errors.log>
+ Order allow,deny
+ Deny from all
+ Satisfy All
+</Files>

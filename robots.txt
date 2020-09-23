@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /Forum/
+Disallow: /400.php
+Disallow: /403.php
+Disallow: /404.php
+Disallow: /500.php
+#Begin Attracta SEO Tools Sitemap. Do not remove
+sitemap: http://cdn.attracta.com/sitemap/3855641.xml.gz
+#End Attracta SEO Tools Sitemap. Do not remove
