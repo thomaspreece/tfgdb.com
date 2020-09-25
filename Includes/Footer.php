@@ -4,41 +4,14 @@
 
 echo "
 	<div style='height:30px'></div>
-";			
-				
-/*
-echo "			
-
-<div style='background-color: #29293D; padding:0px;margin:0px;border:0px;width:996px;height:20px;text-align:center;z-index:1000;'>
-<div style='float:left;height:100%;margin-left:10px;margin-right:10px;'>
-<div style='display:inline-block;width:996px;*display:inline;*zoom:1;text-align:left;height:55px;'>
-<ul id='nav2'>
-
-	<li><a class='NonSelected' href='".$DOMAIN."/AboutUs.php' style='width:160px;'>About Us</a>	
-
-	<li><a class='NonSelected' href='".$DOMAIN."/Terms.php' style='width:160px;'>Terms of Use</a>
-	<li><a class='NonSelected' href='".$DOMAIN."/API.php' style='width:160px;'>API</a>
-	<li><a class='NonSelected' href='".$DOMAIN."/Forum/index.php' style='width:160px;'>Forum</a>
-
-	<li><a class='NonSelected' href='".$DOMAIN."/Links.php' style='width:160px;'>Links</a>
-	<li><a class='NonSelected' href='".$DOMAIN."/Random.php' style='width:160px;'>Random Game</a>
-	
-
-</ul>
-
-</div>
-</div>
-</div>
 ";
-*/
-
 
 echo "
 
 <div style='z-index:2;background-image: url(".$DOMAIN."/Resources/BackGrad2.png);opacity:0.95;filter:alpha(opacity=95); background-color: #3f3f59; position:absolute; left:0px; bottom:0px; width:100%; height:25px;' >
 	<div style='width:992px;height:25px;margin-left:auto;margin-right:auto;color: white;'>
-		<div style='float: left;margin-left:15px; padding:5px;'>Copyright 2012-".date("Y")."</div>
-		
+		<div style='float: left;margin-left:15px; padding:5px;'>Produced by <a style=\"color:white;\" href=\"http://thomaspreece.com/\">Thomas Preece</a> (Copyright 2012-".date("Y").") </div>
+
 		<div style='float: right;margin-right:15px; padding:5px;'><a class='FooterLink' href='".$DOMAIN."/Forum/ucp.php?mode=terms'>Terms of Use</a></div>
 		<div style='float: right;margin-right:15px; padding:5px;'><a class='FooterLink' href='".$DOMAIN."/Links.php'>Links</a></div>
 		<div style='float: right;margin-right:15px; padding:5px;'><a class='FooterLink' href='".$DOMAIN."/API/'>API</a></div>
@@ -81,6 +54,3 @@ Histats.track_hits();} catch(err){};
 </body>
 
 </html>
-
-
-
